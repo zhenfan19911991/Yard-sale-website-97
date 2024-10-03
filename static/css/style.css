@@ -1,0 +1,21 @@
+
+.flash{
+color: #ee6f57;
+text-align: center;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    background-color: #F5F5F7;
+    margin-top: auto;
+}

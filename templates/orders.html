@@ -1,0 +1,32 @@
+{% include "header.html" %}
+
+<div class='container py-3'>
+    <div class="row">
+        <div class="col-lg-10 col-12  mx-auto">
+            {% for order_id in distinct_order_id:%}
+            <p >Order Number: {{order_id.order_id}}&nbsp;&nbsp;&nbsp;&nbsp;Order Time: {{order_id.order_time.strftime("%Y-%m-%d %H:%M:%S")}}</p>
+            {% for order in orders:%}
+            {% if order.order_id == order_id.order_id %}
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col-auto d-none d-lg-block">
+                    <a href="{{url_for('product', id = order.product_id)}}"><img class="bd-placeholder-img card-img-top"
+                                                                                 src={{order.product.product_img_url}}
+                                                                                 style="object-fit: contain; width: 300px; height:200px"></a>
+                </div>
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h4 class="mb-0">{{order.product.product_name}}</h4>
+                    <div class="mb-1 text-body-secondary mt-2">Quantity: 1</div>
+                </div>
+
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+{% include "footer.html" %}
+
