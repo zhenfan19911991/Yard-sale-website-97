@@ -18,7 +18,7 @@ db.init_app(app)
 
 Bootstrap5(app)
 
-stripe.api_key = 'sk_test_51Q4UPaLuY6KlkUuWVuUdDF8muI35XpFDKUQLWKEoMwYzzTLJ9JOrpVEhB1gvgqXHa9I2eC9WnejvZiB2gAGuMSsk00wwDcamOb'
+stripe.api_key = ''
 
 login_manager = LoginManager()
 login_manager.init_app(app)
